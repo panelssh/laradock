@@ -329,3 +329,14 @@ services:
         - 2375
       networks:
         - backend
+
+
+### MailDev ##############################################
+    maildev:
+      build: ./maildev
+      ports:
+        - "${MAILDEV_HTTP_PORT}:80"
+        - "${MAILDEV_SMTP_PORT}:25"
+      networks:
+        - frontend
+        - backend
